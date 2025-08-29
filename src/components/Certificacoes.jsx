@@ -15,6 +15,9 @@ export default function Certificacoes() {
           <div style={{ flex: 1 }}>
             <div className="experience-title" style={{ fontWeight: 'bold', fontSize: 18 }}>{cert.title}</div>
             <div className="experience-company">Amazon Web Services (AWS)</div>
+            {cert.description && (
+              <div style={{ margin: '8px 0 0 0', fontSize: 15, color: '#cbd5e1' }}>{cert.description}</div>
+            )}
             <a href={cert.link} className="experience-link" target="_blank" rel="noopener noreferrer" style={{ color: '#a78bfa', textDecoration: 'underline', display: 'inline-block', marginTop: 8 }}>🔗 Ver Credencial</a>
           </div>
           <a href={cert.link} target="_blank" rel="noopener noreferrer">

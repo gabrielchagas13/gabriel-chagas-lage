@@ -9,24 +9,26 @@ export default function Premios() {
 	return (
 		<div>
 			<h2 style={{ marginBottom: 24 }}>Prêmios</h2>
-			{awardsData.map((award, idx) => (
-				<div className="cert-card" key={idx}>
-					<div style={{ flex: 1 }}>
-						<div className="experience-title" style={{ fontWeight: 'bold', fontSize: 18 }}>{award.title}</div>
-						<div className="experience-company">{award.organization}</div>
-						{award.year && <div className="experience-period">{award.year}</div>}
-						{award.description && <div style={{ margin: '8px 0' }}>{award.description}</div>}
-						{award.link && (
-							<a href={award.link} className="experience-link" target="_blank" rel="noopener noreferrer" style={{ color: '#a78bfa', textDecoration: 'underline', display: 'inline-block', marginTop: 8 }}>🔗 Ver no LinkedIn</a>
-						)}
-					</div>
-					{award.image && (
-						<a href={award.link || '#'} target="_blank" rel="noopener noreferrer">
-							<img src={award.image} alt={award.title} />
-						</a>
-					)}
-				</div>
-			))}
+									{awardsData.map((award, idx) => (
+										<div className="premio-sobre-container" key={idx}>
+											{award.image && (
+												<div className="premio-avatar-container">
+													<a href={award.link || '#'} target="_blank" rel="noopener noreferrer">
+														<img src={award.image} alt={award.title} className="premio-avatar-image" />
+													</a>
+												</div>
+											)}
+											<div className="premio-info-container">
+												<div className="experience-title" style={{ fontWeight: 'bold', fontSize: 18 }}>{award.title}</div>
+												<div className="experience-company">{award.organization}</div>
+												{award.year && <div className="experience-period">{award.year}</div>}
+												{award.description && <div style={{ margin: '8px 0' }}>{award.description}</div>}
+												{award.link && (
+													<a href={award.link} className="experience-link" target="_blank" rel="noopener noreferrer" style={{ color: '#a78bfa', textDecoration: 'underline', display: 'inline-block', marginTop: 8 }}>🔗 Ver no LinkedIn</a>
+												)}
+											</div>
+										</div>
+									))}
 		</div>
 	);
 }

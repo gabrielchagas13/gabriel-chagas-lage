@@ -28,7 +28,7 @@ export const commandList = {
     },
     limpar: {
       name: 'limpar',
-      aliases: ['clear', 'cls'],
+      aliases: ['clear'],
       description: 'Limpa o histórico do terminal.',
     },
     certificacoes: {
@@ -38,7 +38,7 @@ export const commandList = {
     },
     premios: {
       name: 'premios',
-      aliases: ['awards', 'premio', 'award'],
+      aliases: ['awards', 'premios'],
       description: 'Exibe prêmios e reconhecimentos.',
     }
   };
