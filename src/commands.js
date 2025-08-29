@@ -35,5 +35,10 @@ export const commandList = {
       name: 'certificacoes',
       aliases: ['certs', 'certifications', 'certificados'],
       description: 'Exibe minhas certificações profissionais.',
+    },
+    premios: {
+      name: 'premios',
+      aliases: ['awards', 'premio', 'award'],
+      description: 'Exibe prêmios e reconhecimentos.',
     }
   };

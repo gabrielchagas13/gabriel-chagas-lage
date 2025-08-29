@@ -15,6 +15,7 @@ import Ajuda from './components/Ajuda';
 import Contato from './components/Contato';
 import BoasVindas from './components/BoasVindas';
 import Certificacoes from './components/Certificacoes';
+import Premios from './components/Premios';
 
 // Importação de componentes da UI
 import LanguageSwitcher from './components/LanguageSwitcher';
@@ -69,6 +70,9 @@ function App() {
           return;
         case 'certificacoes':
           response = <Certificacoes />;
+          break;
+        case 'premios':
+          response = <Premios />;
           break;
         default:
           break;
