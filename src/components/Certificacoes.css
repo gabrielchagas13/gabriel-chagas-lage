@@ -1,0 +1,48 @@
+/* Responsivo para certificações, experiências e layout principal */
+@media (max-width: 900px) {
+  .experience-card, .cert-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .experience-card img, .cert-card img {
+    margin-left: 0 !important;
+    margin-top: 16px !important;
+    width: 64px !important;
+    height: 64px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .experience-card, .cert-card {
+    padding: 12px !important;
+    font-size: 15px !important;
+  }
+  .experience-title {
+    font-size: 16px !important;
+  }
+  .experience-company {
+    font-size: 14px !important;
+  }
+  h2 {
+    font-size: 20px !important;
+  }
+}
+
+.cert-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 16px;
+  background: #23252b;
+}
+
+.cert-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fff;
+  margin-left: 24px;
+}
