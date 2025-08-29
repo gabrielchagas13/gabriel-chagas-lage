@@ -1,20 +1,33 @@
 @media (max-width: 600px) {
   .welcome-container {
-    padding: 0.5rem 0.5rem;
+    padding: 1.2rem 0.7rem 1.5rem 0.7rem;
+    min-width: 0;
+    box-sizing: border-box;
   }
   .name-animation, .whoami-animation, h1 {
-    font-size: 1.3rem !important;
-    word-break: normal;
-    line-height: 1.15;
-    letter-spacing: -1px;
+    font-size: 1.1rem !important;
+    word-break: break-word;
+    line-height: 1.18;
+    letter-spacing: -0.5px;
+    min-width: 0;
+    max-width: 100vw;
+    overflow-wrap: break-word;
   }
   .welcome-title {
-    font-size: 0.95rem;
+    font-size: 0.93rem;
+    margin-bottom: 0.7rem;
+  }
+  .divider {
+    margin-bottom: 1rem;
+  }
+  .info-list {
+    margin: 1rem 0;
   }
   .info-list li {
-    font-size: 0.95rem;
-    gap: 0.4rem;
+    font-size: 0.93rem;
+    gap: 0.3rem;
     word-break: break-word;
+    min-width: 0;
   }
 }
 /* src/components/BoasVindas.css */
