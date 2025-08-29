@@ -11,7 +11,7 @@ const BoasVindas = () => {
         sequence={[
           'Gabriel Chagas Lage',
           1000,
-          'Gabriel Chagas Lage - Engenheiro de Software',
+          'Gabriel Chagas Lage - Arquiteto de Soluções AWS',
           2000,
         ]}
         wrapper="h1"
@@ -23,7 +23,6 @@ const BoasVindas = () => {
       <div className="static-welcome">
         <p className="welcome-title">$ Bem-vindo ao meu Portfólio</p>
         <hr className="divider" />
-        <p>Um desenvolvedor em formação, apaixonado por criar soluções tecnológicas.</p>
         
         <ul className="info-list">
           <li>

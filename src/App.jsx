@@ -14,6 +14,7 @@ import SobreMim from './components/SobreMim';
 import Ajuda from './components/Ajuda';
 import Contato from './components/Contato';
 import BoasVindas from './components/BoasVindas';
+import Certificacoes from './components/Certificacoes';
 
 // Importação de componentes da UI
 import LanguageSwitcher from './components/LanguageSwitcher';
@@ -66,7 +67,9 @@ function App() {
         case 'limpar':
           setTerminalLineData([]);
           return;
-          
+        case 'certificacoes':
+          response = <Certificacoes />;
+          break;
         default:
           break;
       }

@@ -30,5 +30,10 @@ export const commandList = {
       name: 'limpar',
       aliases: ['clear', 'cls'],
       description: 'Limpa o histórico do terminal.',
+    },
+    certificacoes: {
+      name: 'certificacoes',
+      aliases: ['certs', 'certifications', 'certificados'],
+      description: 'Exibe minhas certificações profissionais.',
     }
   };
