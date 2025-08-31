@@ -3,7 +3,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 // Usando um ícone de globo do pacote Font Awesome (fa)
-import { FaGlobeAmericas } from 'react-icons/fa';
 
 const styles = {
   switcherContainer: {
@@ -75,20 +74,21 @@ const LanguageSwitcher = () => {
 
   return (
     <div style={mergedContainer}>
-      <FaGlobeAmericas style={{...mergedIcon, ...(isEnActive ? { color: '#7fdbff' } : {})}} />
-      <span 
-        style={{...mergedLangText, ...(isPtActive ? styles.active : {})}} 
-        onClick={() => changeLanguage('pt')}
-      >
-        PT
-      </span>
+          <img
+            src={typeof process !== 'undefined' && process.env && process.env.PUBLIC_URL ? process.env.PUBLIC_URL + '/flag-for-flag-brazil-svgrepo-com (1).svg' : '/flag-for-flag-brazil-svgrepo-com (1).svg'}
+            alt="PT"
+            style={{ width: isMobile ? 18 : 22, height: isMobile ? 18 : 22, opacity: isPtActive ? 1 : 0.5, cursor: 'pointer', border: isPtActive ? '2px solid #7fdbff' : '2px solid transparent', borderRadius: '50%', transition: 'all 0.2s', marginRight: 4, background: '#23252b' }}
+            onClick={() => changeLanguage('pt')}
+            draggable={false}
+          />
       <span>|</span>
-      <span 
-        style={{...mergedLangText, ...(isEnActive ? styles.active : {})}} 
-        onClick={() => changeLanguage('en')}
-      >
-        EN
-      </span>
+          <img
+            src={typeof process !== 'undefined' && process.env && process.env.PUBLIC_URL ? process.env.PUBLIC_URL + '/flag-us-svgrepo-com.svg' : '/flag-us-svgrepo-com.svg'}
+            alt="EN"
+            style={{ width: isMobile ? 18 : 22, height: isMobile ? 18 : 22, opacity: isEnActive ? 1 : 0.5, cursor: 'pointer', border: isEnActive ? '2px solid #7fdbff' : '2px solid transparent', borderRadius: '50%', transition: 'all 0.2s', marginLeft: 4, background: '#23252b' }}
+            onClick={() => changeLanguage('en')}
+            draggable={false}
+          />
     </div>
   );
 };

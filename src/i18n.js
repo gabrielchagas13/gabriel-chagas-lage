@@ -10,7 +10,7 @@ const resources = {
   translation: {
   "sobre": {
         "nome": "Gabriel Chagas Lage",
-        "cargo": "Solutions Architect AWS",
+        "cargo": "AWS Solutions Architect",
         "biografia": "Gabriel Chagas Lage is a rising professional in cloud computing and DevOps, with a trajectory marked by continuous specialization and high-level AWS certifications. Currently, he works as a Jr Cloud Solutions Architect at ForceOne, where he designs and implements robust, secure, and scalable architectures, always aligning technical solutions with business needs.",
         "titulo_skills": "Main Skills:"
       },
@@ -64,7 +64,7 @@ const resources = {
   translation: {
   "sobre": {
         "nome": "Gabriel Chagas Lage",
-        "cargo": "Arquiteto de soluções AWS",
+        "cargo": "Arquiteto de Soluções AWS",
         "biografia": "É um profissional em ascensão na área de computação em nuvem e DevOps, com uma trajetória marcada por especialização contínua e certificações de alto nível na AWS. Hoje, atua como Arquiteto de Soluções em Cloud Jr na ForceOne, onde desenha e implementa arquiteturas robustas, seguras e escaláveis, sempre alinhando soluções técnicas às necessidades de negócio.",
         "titulo_skills": "Principais Habilidades:"
       },
