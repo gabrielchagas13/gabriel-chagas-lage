@@ -112,14 +112,13 @@ const FlappyPlaneGame = ({ onExit }) => {
     function loop() {
       if (!gameOver) {
         planeY += gravity;
-        if (planeY < 0 || planeY > 90) {
-          gameOver = true;
-          showGameOverMessage();
-        } else {
-          planeEl.style.top = planeY + '%';
-          updateClouds();
-          requestAnimationFrame(loop);
-        }
+        // Não faz mais game over ao encostar nas linhas
+        // Limita visualmente o avião dentro do campo
+        if (planeY < 0) planeY = 0;
+        if (planeY > 90) planeY = 90;
+        planeEl.style.top = planeY + '%';
+        updateClouds();
+        requestAnimationFrame(loop);
       }
     }
 
