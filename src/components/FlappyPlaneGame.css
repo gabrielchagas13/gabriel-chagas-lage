@@ -1,0 +1,77 @@
+/* Removido body global para não afetar o layout do terminal */
+#game {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 320px;
+  border: 2px solid white;
+  overflow: hidden;
+  margin: 24px auto;
+  background: #111;
+  box-sizing: border-box;
+}
+.plane {
+  position: absolute;
+  left: 50px;
+  font-size: 3.2rem;
+  line-height: 3.2rem;
+  transition: top 0.18s cubic-bezier(.4,1.6,.6,1), filter 0.2s;
+  filter: drop-shadow(0 0 2px #fff8);
+  text-shadow: 0 2px 8px #fff4, 0 0 2px #fff8;
+}
+.cloud {
+  position: absolute;
+  font-size: 4.2rem;
+  line-height: 4.2rem;
+}
+#score {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 6px 22px 6px 18px;
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #222 80%, #444 100%);
+  border-bottom-right-radius: 16px;
+  border: 2px solid #fff;
+  border-left: none;
+  border-top: none;
+  z-index: 10;
+  letter-spacing: 2px;
+  color: #ffe066;
+  box-shadow: 0 2px 12px #000a;
+  text-shadow: 0 2px 8px #fff4, 0 0 2px #fff8;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+#score::before {
+  content: '★';
+  color: #ffd700;
+  font-size: 1.5rem;
+  margin-right: 6px;
+  filter: drop-shadow(0 0 2px #fff8);
+}
+#achievement {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  opacity: 0;
+  border-radius: 8px;
+  pointer-events: none;
+  transition: opacity 0.5s;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 2px solid #ff3333;
+  text-shadow: 0 0 5px #ff3333;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  z-index: 100;
+}
+#achievement.show {
+  opacity: 1;
+  pointer-events: auto;
+}

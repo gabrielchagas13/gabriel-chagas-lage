@@ -1,13 +1,10 @@
 // src/App.jsx
 
+
 import React, { useState } from 'react';
 import Terminal, { ColorMode, TerminalInput, TerminalOutput } from 'react-terminal-ui';
 import './index.css';
-
-// Importa a lista de comandos do arquivo central
 import { commandList } from './commands';
-
-// Importação dos componentes de comando
 import Projetos from './components/Projetos';
 import Experiencias from './components/Experiencias';
 import SobreMim from './components/SobreMim';
@@ -16,22 +13,24 @@ import Contato from './components/Contato';
 import BoasVindas from './components/BoasVindas';
 import Certificacoes from './components/Certificacoes';
 import Premios from './components/Premios';
-
-// Importação de componentes da UI
+import FlappyPlaneGame from './components/FlappyPlaneGame';
 import LanguageSwitcher from './components/LanguageSwitcher';
+
 
 function App() {
   // Função para gerar a mensagem de boas-vindas
   const getWelcomeMessage = () => <BoasVindas key="welcome" />;
 
-  // 2. O ESTADO INICIAL AGORA USA A NOVA MENSAGEM
+  // Estado inicial com mensagem de boas-vindas
   const [terminalLineData, setTerminalLineData] = useState([
     getWelcomeMessage()
   ]);
 
+  // Estado para saber se o jogo está aberto (última linha é FlappyPlaneGame)
+  const isGameOpen = terminalLineData.length > 0 && terminalLineData[terminalLineData.length - 1]?.type === FlappyPlaneGame;
+
   function handleInput(input) {
     let newLines = [...terminalLineData];
-    // Adicionamos o prompt junto com o input para um visual mais autêntico
     newLines.push(<TerminalInput key={`input-${newLines.length}`}>{myPrompt} {input}</TerminalInput>);
 
     const args = input.toLowerCase().trim().split(' ');
@@ -48,23 +47,18 @@ function App() {
         case 'sobre':
           response = <SobreMim />;
           break;
-        
         case 'ajuda':
           response = <Ajuda />;
           break;
-        
         case 'projetos':
           response = <Projetos />;
           break;
-        
         case 'experiencias':
           response = <Experiencias />;
           break;
-        
         case 'contato':
           response = <Contato />;
           break;
-        
         case 'limpar':
           setTerminalLineData([]);
           return;
@@ -74,33 +68,35 @@ function App() {
         case 'premios':
           response = <Premios />;
           break;
+        case 'game':
+          response = <FlappyPlaneGame onExit={() => {
+            // Remove o último comando (o jogo) do terminal
+            setTerminalLineData(lines => lines.slice(0, -1));
+          }} />;
+          break;
         default:
           break;
       }
     } else {
       response = <TerminalOutput>Comando não reconhecido: "{userInput}". Digite "ajuda" para ver as opções.</TerminalOutput>;
     }
-    
     if (Array.isArray(response)) {
       newLines.push(...response);
     } else {
       newLines.push(response);
     }
-    
     setTerminalLineData(newLines);
   }
 
-  // Corrigi o nome do prompt para "visitante" como você tinha pedido
   const myPrompt = "visitante@portfolio:~$";
 
   return (
     <div className="container">
       <LanguageSwitcher />
-
       <Terminal
         name=''
         colorMode={ColorMode.Dark}
-        onInput={handleInput}
+        onInput={isGameOpen ? undefined : handleInput}
         prompt={myPrompt}
       >
         {terminalLineData}

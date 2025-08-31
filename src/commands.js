@@ -11,11 +11,6 @@ export const commandList = {
       aliases: ['help'],
       description: 'Mostra esta lista de comandos disponíveis.',
     },
-    projetos: {
-      name: 'projetos',
-      aliases: ['projects'],
-      description: 'Exibe os principais projetos em que trabalhei.',
-    },
     experiencias: {
       name: 'experiencias',
       aliases: ['experience', 'xp'],
@@ -40,5 +35,10 @@ export const commandList = {
       name: 'premios',
       aliases: ['awards'],
       description: 'Exibe prêmios e reconhecimentos.',
+    },
+    game: {
+      name: 'game',
+      aliases: ['chaplane', 'chagame'],
+      description: 'Jogue o Flappy Plane diretamente no terminal web.'
     }
   };
