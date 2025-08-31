@@ -136,7 +136,9 @@ const FlappyPlaneGame = ({ onExit }) => {
       if (e.code === 'Space' && !gameOver) flap();
       if ((e.key === 'r' || e.key === 'R') && gameOver) resetGame();
     }
-    function clickHandler() {
+    function clickHandler(e) {
+      // Só reage se o clique/touch for dentro do #game
+      if (!game.contains(e.target)) return;
       if (gameOver) {
         resetGame();
       } else {
@@ -145,8 +147,8 @@ const FlappyPlaneGame = ({ onExit }) => {
     }
 
     window.addEventListener('keydown', keyHandler);
-    window.addEventListener('click', clickHandler);
-    window.addEventListener('touchstart', clickHandler);
+    game.addEventListener('click', clickHandler);
+    game.addEventListener('touchstart', clickHandler);
     const cloudInterval = setInterval(() => {
       if (!gameOver) createCloud();
     }, 2000);
@@ -154,8 +156,8 @@ const FlappyPlaneGame = ({ onExit }) => {
 
     return () => {
       window.removeEventListener('keydown', keyHandler);
-      window.removeEventListener('click', clickHandler);
-      window.removeEventListener('touchstart', clickHandler);
+      game.removeEventListener('click', clickHandler);
+      game.removeEventListener('touchstart', clickHandler);
       clearInterval(cloudInterval);
     };
   }, []);
