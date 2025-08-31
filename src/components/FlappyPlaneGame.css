@@ -1,14 +1,40 @@
 /* Removido body global para não afetar o layout do terminal */
+/* Responsivo para mobile */
 #game {
   position: relative;
-  width: 100%;
-  max-width: 500px;
-  height: 320px;
+  width: 95vw;
+  max-width: 400px;
+  height: 60vw;
+  max-height: 320px;
+  min-height: 220px;
   border: 2px solid white;
   overflow: hidden;
   margin: 24px auto;
   background: #111;
   box-sizing: border-box;
+  touch-action: manipulation;
+}
+
+@media (max-width: 500px) {
+  #game {
+    width: 98vw;
+    max-width: 98vw;
+    height: 60vw;
+    max-height: 70vw;
+    min-height: 180px;
+  }
+  .plane {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+  }
+  .cloud {
+    font-size: 2.8rem;
+    line-height: 2.8rem;
+  }
+  #score {
+    font-size: 1.2rem;
+    padding: 4px 12px 4px 10px;
+  }
 }
 .plane {
   position: absolute;

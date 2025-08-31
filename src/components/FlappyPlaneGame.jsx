@@ -131,16 +131,22 @@ const FlappyPlaneGame = ({ onExit }) => {
       }, 120);
     }
 
+
     function keyHandler(e) {
       if (e.code === 'Space' && !gameOver) flap();
-      if (e.key === 'r' || e.key === 'R') resetGame();
+      if ((e.key === 'r' || e.key === 'R') && gameOver) resetGame();
     }
     function clickHandler() {
-      if (!gameOver) flap();
+      if (gameOver) {
+        resetGame();
+      } else {
+        flap();
+      }
     }
 
     window.addEventListener('keydown', keyHandler);
     window.addEventListener('click', clickHandler);
+    window.addEventListener('touchstart', clickHandler);
     const cloudInterval = setInterval(() => {
       if (!gameOver) createCloud();
     }, 2000);
@@ -149,6 +155,7 @@ const FlappyPlaneGame = ({ onExit }) => {
     return () => {
       window.removeEventListener('keydown', keyHandler);
       window.removeEventListener('click', clickHandler);
+      window.removeEventListener('touchstart', clickHandler);
       clearInterval(cloudInterval);
     };
   }, []);
