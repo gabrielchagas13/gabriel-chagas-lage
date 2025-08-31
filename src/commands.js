@@ -3,7 +3,7 @@
 export const commandList = {
     sobre: {
       name: 'sobre',
-      aliases: ['sobremim', 'aboutme', 'about'],
+      aliases: ['about'],
       description: 'Mostra uma breve descrição sobre mim.',
     },
     ajuda: {
@@ -33,12 +33,12 @@ export const commandList = {
     },
     certificacoes: {
       name: 'certificacoes',
-      aliases: ['certs', 'certifications', 'certificados'],
+      aliases: ['certs', 'certifications'],
       description: 'Exibe minhas certificações profissionais.',
     },
     premios: {
       name: 'premios',
-      aliases: ['awards', 'premios'],
+      aliases: ['awards'],
       description: 'Exibe prêmios e reconhecimentos.',
     }
   };

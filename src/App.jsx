@@ -98,7 +98,7 @@ function App() {
       <LanguageSwitcher />
 
       <Terminal
-        name='Gabriel Chagas Lage'
+        name=''
         colorMode={ColorMode.Dark}
         onInput={handleInput}
         prompt={myPrompt}

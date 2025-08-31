@@ -1,13 +1,15 @@
 // src/components/Ajuda.jsx
 
+
 import React from 'react';
-// Importa a lista de comandos do nosso novo arquivo central
+import { useTranslation } from 'react-i18next';
 import { commandList } from '../commands';
 
 const Ajuda = () => {
+  const { t } = useTranslation();
   return (
     <div style={{ padding: '0 1.5rem' }}>
-      <p>Comandos disponíveis:</p>
+      <p>{t('ajuda.titulo', 'Comandos disponíveis:')}</p>
       {Object.values(commandList).map((cmd, index) => {
         const allAliases = [cmd.name, ...cmd.aliases].join(' | ');
         return (
@@ -17,7 +19,7 @@ const Ajuda = () => {
               <span>{allAliases}</span>
             </div>
             <p style={{ margin: '0.25em 0 0 2.5ch', color: '#a0aec0' }}>
-              {cmd.description}
+              {t(`ajuda.${cmd.name}.desc`, cmd.description)}
             </p>
           </div>
         );
