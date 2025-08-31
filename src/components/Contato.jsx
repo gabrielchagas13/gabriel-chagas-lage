@@ -9,7 +9,7 @@ const Contato = () => {
   // Lembre-se de substituir pelos seus links e e-mail reais
   const seuLinkedIn = "https://www.linkedin.com/in/gabriel-chagas-lage";
   const seuGitHub = "https://github.com/gabrielchagas13";
-  const seuEmail = "gabrielclage04@exemplo.com";
+  const seuEmail = "gabrielclage04@gmail.com";
 
   return (
     <div className="contato-container" style={{ padding: '0 1.5rem' }}>
